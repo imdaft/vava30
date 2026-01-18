@@ -15,21 +15,26 @@ const EVENT = {
 
 // Moodboard берём из папки "Mood картинки" в корне проекта.
 // Если ты добавишь/удалишь файлы в этой папке и хочешь, чтобы список обновился — скажи мне, я сгенерю новый список.
-const MOODBOARD_DIR = "./Mood картинки/";
+const MOODBOARD_DIR = "./mood/";
 const MOODBOARD_FILES = [
   "0ca983687fc17873e52fd4c79a87edcf.jpg",
+  "1d2d17d899986a1cb8947cbcd4ace6d6.jpg",
   "1fb1dd9b0c830146c79cfe102f199e4a.jpg",
   "1fe3c151e918d8b8f5d959a524940d97.jpg",
   "34b903ca6a35fbc1da129c2bec25724d.jpg",
   "3571a6a950105ddc58e7421c8485b607.jpg",
+  "35cfccebd07b5996d0873f21b84c06ac.jpg",
   "3a1166bdc288cfd05e5afe6a066a30ca.jpg",
-  "5214891cdd39e8e704274aed11744f3b.jpg", // Оставляю одну версию
+  "5214891cdd39e8e704274aed11744f3b.jpg",
   "618654ba7a7f0df9790b71809c06d6f3.jpg",
   "62724f6412d770c83a11dd6221795c82.jpg",
+  "6325f6177c0b4d340a9d1275c83d94a2.jpg",
+  "66b1e210c14ddc9b8f3900498cdd079d.jpg",
   "6ed4e8654e39c2f3f642cc1dfde85ff1.jpg",
   "79f9e3029c7325e53de86fb39c2e9cee.jpg",
   "87c5e66eb473ff6e410ff4bb78d27615.jpg",
-  "b0577d05b5bcef8a69a949a9eb22bbf6.jpg", // Оставляю одну версию
+  "b0577d05b5bcef8a69a949a9eb22bbf6.jpg",
+  "c0f4074a915d9bc96a13e87df957bfec.jpg",
   "cb74161b6a4cb8cc9dff303e07b6dd74.jpg",
   "cdbc19dba5f0e1f88333098eb59f74a7.jpg",
   "d3f9717e411b1648653ae5a0dada6a57.jpg",
@@ -37,10 +42,11 @@ const MOODBOARD_FILES = [
   "db5eced77f5a24aa073ab1473399d308.jpg",
   "dd70f7a45b31f79903d1d64b17be26f6.jpg",
   "f02e4824bcd53a1d3db239ad5a3b9140.jpg",
+  "f2c6b8767a38efb03663f0575578d89c.jpg",
   "f3b3e3d122ba9eacd36f76323cd40451.jpg",
   "f56b3268dbd04bd2980f824ca820ff48.jpg",
   "fcd38adf73a908e6b53d5f8e508106c9.jpg",
-  "mood-5.png",
+  "mood-extra.png",
 ];
 
 function clamp(value, min, max) {
