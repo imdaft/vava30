@@ -1,0 +1,428 @@
+:root {
+  --bg: #fbf7f1;
+  --ink: #2f2a24;
+  --muted: rgba(47, 42, 36, 0.72);
+  --border: rgba(47, 42, 36, 0.14);
+  --glass: rgba(255, 255, 255, 0.6);
+  --glass-strong: rgba(255, 255, 255, 0.72);
+  --shadow: 0 18px 60px rgba(26, 22, 18, 0.18);
+  --radius: 22px;
+  --max: 1100px;
+
+  --accent: #98b6c6;
+  --accent2: #d8a2aa;
+
+  --p: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fbf7f1;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* --- Hero Video Section --- */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  height: 300vh; /* Высокое, чтобы видео скроллилось долго */
+  margin-top: -250px; /* Поднимаем видео на 250px */
+  overflow: visible;
+  background: transparent;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Верх видео — наверху */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 768px) {
+  .hero-video-container {
+    height: 200vh;
+    margin-top: 0; /* БЕЗ смещения — верх видео = верх сайта */
+  }
+  
+  .bg-video {
+    object-fit: contain; /* Видео во всю ширину, без обрезки */
+    object-position: top center;
+  }
+}
+
+/* --- Content Section --- */
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+  min-height: 300vh;
+  padding-top: calc(100vh + 500px);
+  padding-bottom: 120px;
+  pointer-events: none;
+}
+
+/* МОБИЛЬНАЯ: контент поверх видео */
+@media (max-width: 768px) {
+  .content {
+    padding-top: 50vh; /* Чуть ниже */
+    padding-bottom: 80px;
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #fbf7f1 70%);
+  }
+}
+
+.content > * {
+  pointer-events: auto; /* Возвращаем клики для контента */
+}
+
+/* Убираем белую подложку */
+.content::after {
+  display: none;
+}
+
+.container {
+  width: min(800px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* Moodboard на всю ширину */
+.moodboard .container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ДЕСКТОПНАЯ: больше отступа сверху для секций */
+@media (min-width: 769px) {
+  .moodboard {
+    padding-top: 100px; /* Опускаем вниз */
+  }
+  
+  .dresscode {
+    padding-top: 100px; /* Опускаем вниз */
+  }
+}
+
+/* МОБИЛЬНАЯ: белый фон под галереей */
+@media (max-width: 768px) {
+  .moodboard {
+    background: #ffffff !important; /* БЕЛЫЙ */
+    padding: 40px 0 !important;
+  }
+  
+  .moodboard .container {
+    padding: 0 !important;
+    background: #ffffff !important; /* БЕЛЫЙ */
+  }
+  
+  /* Дресс-код тоже на белом */
+  .dresscode {
+    background: #ffffff !important;
+    padding: 40px 0 80px !important;
+  }
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(34px, 4vw, 52px);
+  letter-spacing: 0.01em;
+  color: #2f2a24;
+}
+
+.section-lead {
+  margin: 10px 0 0;
+  color: #665f55;
+  max-width: 64ch;
+}
+
+/* --- Typography Block --- */
+.typo-block {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+/* МОБИЛЬНАЯ: БЕЗ подложки */
+@media (max-width: 768px) {
+  .typo-block {
+    margin-bottom: 80px;
+    background: transparent; /* БЕЗ подложки */
+    padding: 0 20px;
+  }
+}
+
+.typo-date {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(60px, 12vw, 140px);
+  line-height: 0.9;
+  font-weight: 600;
+  color: #2f2a24;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* МОБИЛЬНАЯ */
+@media (max-width: 768px) {
+  .typo-date {
+    font-size: clamp(48px, 10vw, 80px);
+  }
+}
+
+.typo-time {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 400;
+  margin: 10px 0 20px;
+  color: #2f2a24;
+  opacity: 0.9;
+}
+
+/* МОБИЛЬНАЯ */
+@media (max-width: 768px) {
+  .typo-time {
+    font-size: clamp(24px, 4vw, 36px);
+  }
+}
+
+.typo-location {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #665f55;
+  opacity: 0.85;
+  max-width: none;
+  white-space: nowrap; /* В одну строку */
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* МОБИЛЬНАЯ: адрес в одну строку */
+@media (max-width: 768px) {
+  .typo-location {
+    font-size: 12px;
+    white-space: nowrap !important; /* В ОДНУ строку */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+  }
+}
+
+/* --- Gallery / Moodboard --- */
+/* ДЕСКТОПНАЯ: masonry layout */
+.gallery {
+  column-count: 2;
+  column-gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 769px) and (max-width: 899px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    column-count: 4;
+  }
+}
+
+.shot {
+  break-inside: avoid;
+  margin-bottom: 0;
+  border-radius: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === МОБИЛЬНАЯ: MASONRY 2 СТОЛБИКА (≤768px) === */
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2 !important;
+    column-gap: 8px !important;
+    padding: 0 4px !important;
+    margin: 0 !important;
+    display: block !important;
+    background: #ffffff !important;
+  }
+  
+  .shot {
+    display: inline-block !important;
+    width: 100% !important;
+    break-inside: avoid !important;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: hidden;
+  }
+  
+  /* ВСЕ фото со скруглением - разные углы */
+  /* Левый верхний угол */
+  .shot:nth-child(4n+1) {
+    border-radius: 48px 0 0 0 !important;
+  }
+  
+  /* Правый верхний угол */
+  .shot:nth-child(4n+2) {
+    border-radius: 0 45px 0 0 !important;
+  }
+  
+  /* Правый нижний угол */
+  .shot:nth-child(4n+3) {
+    border-radius: 0 0 50px 0 !important;
+  }
+  
+  /* Левый нижний угол */
+  .shot:nth-child(4n+4) {
+    border-radius: 0 0 0 46px !important;
+  }
+  
+  .shot img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    background: #fff !important;
+  }
+}
+
+.palette {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 96px;
+}
+
+/* МОБИЛЬНАЯ */
+@media (max-width: 768px) {
+  .palette {
+    gap: 8px;
+    margin: 0 auto 60px;
+  }
+}
+
+.palette-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(47, 42, 36, 0.1);
+}
+
+/* МОБИЛЬНАЯ */
+@media (max-width: 768px) {
+  .palette-swatch {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* --- Lightbox --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: rgba(10, 9, 8, 0.92);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+  z-index: 1200;
+  cursor: default;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+.lb-close,
+.lb-prev,
+.lb-next {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  padding: 20px;
+  transition: transform 150ms ease, color 150ms ease;
+  z-index: 1210;
+  user-select: none;
+}
+
+.lb-close:hover, .lb-prev:hover, .lb-next:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.lb-close { top: 10px; right: 10px; font-size: 42px; line-height: 0.5; }
+.lb-prev { left: 10px; top: 50%; transform: translateY(-50%); font-size: 64px; }
+.lb-next { right: 10px; top: 50%; transform: translateY(-50%); font-size: 64px; }
+.lb-prev:hover, .lb-next:hover { transform: translateY(-50%) scale(1.1); }
+
+/* --- Utility --- */
+.text-center { text-align: center; }
+.skip-link { display: none; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { transition: none; }
+}

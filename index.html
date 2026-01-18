@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <title>VAVA — приглашение</title>
+    <meta name="description" content="Приглашение на день рождения. Дата, место, дресс‑код и мудборд." />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='88'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="hero-video-container">
+      <video class="bg-video" autoplay muted loop playsinline poster="./assets/images/bg.jpeg">
+        <source src="./assets/video/bg_video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <main class="content">
+      <section class="section details" id="details" data-reveal>
+        <div class="container typo-block">
+          <h2 class="typo-date"><span style="font-size: 2em;">23</span> января</h2>
+          <p class="typo-time">18:00</p>
+          <p class="typo-location" id="addressLongText">Ленинский проспект, дом 148</p>
+          
+        </div>
+      </section>
+
+      <section class="section moodboard" id="moodboard">
+        <div class="container">
+          <div class="mood-actions" data-reveal>
+            <div class="palette">
+              <span class="palette-swatch" style="background: #f5e6d3;"></span>
+              <span class="palette-swatch" style="background: #d4a5a5;"></span>
+              <span class="palette-swatch" style="background: #9fa8b8;"></span>
+              <span class="palette-swatch" style="background: #e8d5c4;"></span>
+              <span class="palette-swatch" style="background: #c9b896;"></span>
+            </div>
+          </div>
+
+          <div class="gallery" id="gallery" aria-label="Галерея мудборда">
+          </div>
+        </div>
+      </section>
+
+      <section class="section dresscode" id="dresscode">
+        <div class="container" style="text-align: center;">
+          <div class="section-head" data-reveal>
+            <h2 class="section-title">DRESS CODE</h2>
+            <p class="section-lead" style="font-size: 18px; max-width: 40ch; margin: 20px auto;">
+              Пастельные тона, цветы, сатин, жемчуг. <br>
+              Красиво, удобно и в твоём стиле.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото" hidden>
+      <button class="lb-close" id="lbClose" title="Закрыть">×</button>
+      <button class="lb-prev" id="lbPrev" title="Назад">‹</button>
+      <img class="lightbox-img" id="lightboxImg" alt="" />
+      <button class="lb-next" id="lbNext" title="Вперёд">›</button>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
